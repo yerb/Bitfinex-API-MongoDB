@@ -17,9 +17,9 @@ print(data)
 for record in data:
     c_mts = record[0]
     c_open = record[1]
-    c_close = record[4]
-    c_high = record[2]
-    c_low = record[3]
+    c_close = record[2]
+    c_high = record[3]
+    c_low = record[4]
     c_volume = record[5]
 
     print(c_mts, c_open, c_close, c_high, c_low, c_volume)
