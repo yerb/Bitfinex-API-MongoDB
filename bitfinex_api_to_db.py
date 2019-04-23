@@ -5,7 +5,7 @@ pair = 'BTCUSD'
 timeframe = "1h"
 apiurl = 'https://api.bitfinex.com/v2'
 
-# 'https://api.bitfinex.com/v2/candles/trade:1h:t' + pair + "/hist"
+# API URL example: 'https://api.bitfinex.com/v2/candles/trade:1h:tBTCUSD/hist"
 candles = apiurl + '/candles/trade:' + timeframe + ':t' + pair + '/hist'
 print("this is candle request ", candles)
 
