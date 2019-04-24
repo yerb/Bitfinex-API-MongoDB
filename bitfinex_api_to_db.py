@@ -1,15 +1,14 @@
 import mongoengine
 import requests
 
+apiurl = 'https://api.bitfinex.com/v2'
 pair = 'BTCUSD'
 timeframe = "1h"
-apiurl = 'https://api.bitfinex.com/v2'
 
 # API URL example: 'https://api.bitfinex.com/v2/candles/trade:1h:tBTCUSD/hist"
-candles = apiurl + '/candles/trade:' + timeframe + ':t' + pair + '/hist'
-print("this is candle request ", candles)
+candle_data = apiurl + '/candles/trade:' + timeframe + ':t' + pair + '/hist'
 
-r = requests.get(candles)
+r = requests.get(candle_data)
 
 data = r.json()
 print(data)
@@ -24,6 +23,6 @@ for record in data:
 
     print(c_mts, c_open, c_close, c_high, c_low, c_volume)
 
-    db = mongoengine.connect('bitfinex.ticker_1h', host='localhost', port=27017)
+    db = mongoengine.connect('bitfinex.candles_1h', host='localhost', port=27017)
     db.bitfinex.ticker_1h.insert_one(
         dict(mts=c_mts, open=c_open, close=c_close, high=c_high, low=c_low, volume=c_volume))
