@@ -5,4 +5,4 @@ Usage:
 
 api_data_to_db.py
 
-API request for 1h candlestick data and injection into a MongoDB collection. Default is last 120 candles.
+API request for 1h candlestick data and injection into a MongoDB collection. Default scope is the last 120 candles.
