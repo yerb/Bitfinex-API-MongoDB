@@ -25,11 +25,5 @@ for record in data:
     print(c_mts, c_open, c_close, c_high, c_low, c_volume)
 
     db = mongoengine.connect('bitfinex.ticker_1h', host='localhost', port=27017)
-    db.bitfinex.ticker_1h.insert_one({
-        "mts": c_mts,
-        "open": c_open,
-        "close": c_close,
-        "high": c_high,
-        "low": c_low,
-        "volume": c_volume,
-    });
+    db.bitfinex.ticker_1h.insert_one(
+        dict(mts=c_mts, open=c_open, close=c_close, high=c_high, low=c_low, volume=c_volume))
