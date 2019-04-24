@@ -3,7 +3,7 @@ import requests
 
 apiurl = 'https://api.bitfinex.com/v2'
 pair = 'BTCUSD'
-timeframe = "1h"
+timeframe = '1h'
 
 # API URL example: 'https://api.bitfinex.com/v2/candles/trade:1h:tBTCUSD/hist"
 candle_data = apiurl + '/candles/trade:' + timeframe + ':t' + pair + '/hist'
